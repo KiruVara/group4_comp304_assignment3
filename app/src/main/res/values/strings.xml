@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">group4_comp304_assignment3</string>
+    <string-array name="line_thickness_values">
+        <item>10f</item>
+        <item>15f</item>
+        <item>20f</item>
+        <item>25f</item>
+        <item>30f</item>
+        <item>35f</item>
+        <item>40f</item>
+        <item>45f</item>
+        <item>50f</item>
+    </string-array>
+
+</resources>

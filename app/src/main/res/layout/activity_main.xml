@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Select exercises to demonstrate:"
+        android:textColor="@color/green"
+        />
+
+    <Button
+        android:id="@+id/btnLinear"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Exercise 1"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="ex1Clicked" />
+
+    <Button
+        android:id="@+id/btnFrame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Exercise 2"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="ex2Clicked" />
+
+    <Button
+        android:id="@+id/btnTable"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Exercise 3"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="ex3Clicked" />
+
+
+
+</LinearLayout>
