@@ -1,36 +1,10 @@
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-
-        <!-- Segment 3 -->
+<set xmlns:android="http://schemas.android.com/apk/res/android" android:shareInterpolator="@android:anim/linear_interpolator">
         <objectAnimator
-            android:duration="1000"
-            android:propertyName="translationX"
+            android:propertyName="rotation"
             android:valueFrom="0"
-            android:valueTo="200"
-            android:valueType="floatType"
-            android:interpolator="@android:interpolator/linear"
-            android:startOffset="0"
-            android:repeatCount="infinite" />
-
-        <objectAnimator
-            android:duration="1000"
-            android:propertyName="translationY"
-            android:valueFrom="0"
-            android:valueTo="100"
-            android:valueType="floatType"
-            android:interpolator="@android:interpolator/bounce"
-            android:startOffset="0"
-            android:repeatCount="infinite" />
-
-        <objectAnimator
-            android:duration="1000"
-            android:propertyName="translationY"
-            android:valueFrom="0"
-            android:valueTo="0"
-            android:valueType="floatType"
-            android:interpolator="@android:interpolator/bounce"
-            android:startOffset="0"
-            android:repeatCount="infinite" />
-
-
-
+            android:valueTo="360"
+            android:repeatCount="infinite"
+            android:repeatMode="restart"
+            android:duration="4000"
+            />
 </set>

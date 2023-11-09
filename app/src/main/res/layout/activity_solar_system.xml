@@ -6,14 +6,23 @@
         android:id="@+id/sunImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/sun"
-        android:layout_centerInParent="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="385dp"
+        android:src="@drawable/sun" />
 
     <ImageView
         android:id="@+id/earthImageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/earth"
-        android:layout_above="@id/sunImageView"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="262dp"
+        android:src="@drawable/earth" />
 </RelativeLayout>

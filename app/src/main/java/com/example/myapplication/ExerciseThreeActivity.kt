@@ -1,9 +1,10 @@
 package com.example.myapplication
 import android.animation.AnimatorInflater
-import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+
 class ExerciseThreeActivity:AppCompatActivity() {
     private lateinit var sunView: ImageView
     private lateinit var earthView: ImageView
@@ -16,13 +17,31 @@ class ExerciseThreeActivity:AppCompatActivity() {
         earthView = findViewById(R.id.earthImageView)
 
         val rotateEarth = AnimatorInflater.loadAnimator(this, R.animator.rotate_earth)
-        val revolveEarth = AnimatorInflater.loadAnimator(this, R.animator.revolve_earth)
 
         rotateEarth.setTarget(earthView)
-        revolveEarth.setTarget(earthView)
+        performAnimation(R.animator.revolve_earth)
 
-        val set = AnimatorSet()
-        set.playTogether(rotateEarth, revolveEarth)
-        set.start()
+        rotateEarth.start()
+    }
+    private fun performAnimation(animationResourceID: Int){
+        val orbitRadius = 300
+        val pivotX = earthView.x + orbitRadius
+        val pivotY = earthView.y + orbitRadius
+
+        earthView.pivotX = pivotX
+        earthView.pivotY = pivotY
+
+        val rotationAnimator = ObjectAnimator.ofFloat(
+            earthView,
+            "rotation",
+            0f,
+            360f
+        ).apply{animationResourceID
+        }
+
+        earthView.setImageResource(R.drawable.earth)
+
+        rotationAnimator.start()
+
     }
 }
