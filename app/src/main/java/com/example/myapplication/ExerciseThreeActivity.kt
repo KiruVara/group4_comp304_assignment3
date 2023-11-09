@@ -1,5 +1,6 @@
 package com.example.myapplication
 import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,8 @@ class ExerciseThreeActivity:AppCompatActivity() {
         rotateEarth.setTarget(earthView)
         revolveEarth.setTarget(earthView)
 
-        rotateEarth.start()
-        revolveEarth.start()
+        val set = AnimatorSet()
+        set.playTogether(rotateEarth, revolveEarth)
+        set.start()
     }
 }
