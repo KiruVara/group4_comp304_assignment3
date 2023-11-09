@@ -17,12 +17,13 @@ class ExerciseThreeActivity:AppCompatActivity() {
 
         val rotateEarth = AnimatorInflater.loadAnimator(this, R.animator.rotate_earth)
         val revolveEarth = AnimatorInflater.loadAnimator(this, R.animator.revolve_earth)
+        val scaleEarth = AnimatorInflater.loadAnimator(this, R.animator.scale_earth);
 
         rotateEarth.setTarget(earthView)
         revolveEarth.setTarget(earthView)
-
+        scaleEarth.setTarget(earthView);
         val set = AnimatorSet()
-        set.playTogether(rotateEarth, revolveEarth)
+        set.playTogether(rotateEarth, revolveEarth, scaleEarth)
         set.start()
     }
 }
