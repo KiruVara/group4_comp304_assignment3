@@ -19,8 +19,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, ExerciseTwoActivity::class.java)
         startActivity(intent)
     }
-    fun ex3Clicked(){
+    fun ex3Clicked(view: View){
         //add to open exercise 3
-
+        val intent = Intent(this, ExerciseThreeActivity::class.java)
+        startActivity(intent)
     }
 }
