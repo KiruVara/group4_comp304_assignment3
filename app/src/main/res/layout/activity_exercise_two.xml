@@ -9,7 +9,7 @@
     <com.example.myapplication.LongDateTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:longDate="1"
+        app:longDate="06/05/1999"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

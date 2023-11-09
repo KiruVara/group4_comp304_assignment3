@@ -1,4 +1,3 @@
-
 package com.example.myapplication
 
 import android.content.Context
@@ -18,17 +17,17 @@ class LongDateTextView @JvmOverloads constructor(
     init {
         if (attrs != null) {
             val a = context.obtainStyledAttributes(attrs, R.styleable.LongDateTextView)
-            mLongDate = a.getInt(R.styleable.LongDateTextView_longDate, 0).toLong()
+            mLongDate = a.getString(R.styleable.LongDateTextView_longDate)?.toDate()?.time ?: 0
             a.recycle()
         }
         setText(getFormattedDate(mLongDate))
     }
 
-    var longDate: Long
-        get() = mLongDate
+    var longDate: String
+        get() = mLongDate.toString()
         set(date) {
-            mLongDate = date
-            setText(getFormattedDate(date))
+            mLongDate = date.toDate().time
+            setText(getFormattedDate(mLongDate))
         }
 
     private fun getFormattedDate(date: Long): String {
@@ -36,5 +35,9 @@ class LongDateTextView @JvmOverloads constructor(
         calendar.timeInMillis = date
         val longDateFormat = SimpleDateFormat("EEEE, MMMM dd, yyyy 'at' hh:mm a", Locale.getDefault())
         return longDateFormat.format(calendar.time)
+    }
+
+    private fun String.toDate(pattern: String = "dd/MM/yyyy"): Date {
+        return SimpleDateFormat(pattern, Locale.getDefault()).parse(this) ?: Date(0)
     }
 }
